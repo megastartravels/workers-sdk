@@ -106,6 +106,7 @@ export function addUpdateOptions(yargs: Argv<CommonYargsOptions>) {
 				describe:
 					"Pipeline transform Worker and entrypoint (<worker>.<entrypoint>)",
 				demandOption: false,
+				hidden: true, // TODO: Remove once transformations launch
 			})
 
 			// Destination options
@@ -173,6 +174,15 @@ export function addUpdateOptions(yargs: Argv<CommonYargsOptions>) {
 					}
 					return val;
 				},
+			})
+
+			// Pipeline settings
+			.group(["shard-count"], `${chalk.bold("Pipeline settings")}`)
+			.option("shard-count", {
+				type: "number",
+				describe:
+					"Number of pipeline shards. More shards handle higher request volume; fewer shards produce larger output files",
+				demandOption: false,
 			})
 	);
 }
@@ -293,6 +303,10 @@ export async function updatePipelineHandler(
 	}
 	if (args.fileTemplate) {
 		pipelineConfig.destination.path.filename = args.fileTemplate;
+	}
+
+	if (args.shardCount) {
+		pipelineConfig.metadata.shards = args.shardCount;
 	}
 
 	logger.log(`🌀 Updating Pipeline "${name}"`);
