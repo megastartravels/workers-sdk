@@ -67,12 +67,18 @@ export function addUpdateOptions(yargs: Argv<CommonYargsOptions>) {
 					"Require Cloudflare API Token for HTTPS endpoint authentication",
 				demandOption: false,
 			})
+			.conflicts("cors-origins", "remove-cors-origins")
 			.option("cors-origins", {
 				type: "array",
 				describe:
 					"CORS origin allowlist for HTTP endpoint (use * for any origin)",
 				demandOption: false,
 				coerce: validateCorsOrigins,
+			})
+			.option("remove-cors-origins", {
+				type: "boolean",
+				describe: "Remove all CORS origins for HTTP source",
+				demandOption: false,
 			})
 
 			// Batching
@@ -278,6 +284,9 @@ export async function updatePipelineHandler(
 		}
 		if (args.corsOrigins && args.corsOrigins.length > 0) {
 			httpSource.cors = { origins: args.corsOrigins };
+		}
+		if (args.removeCorsOrigins !== undefined && args.removeCorsOrigins) {
+			httpSource.cors = undefined;
 		}
 	}
 
