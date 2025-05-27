@@ -2022,9 +2022,6 @@ importers:
       '@types/ws':
         specifier: ^8.5.13
         version: 8.5.13
-      fetch-to-node:
-        specifier: ^2.1.0
-        version: 2.1.0
       magic-string:
         specifier: ^0.30.12
         version: 0.30.17
@@ -2037,9 +2034,6 @@ importers:
       typescript:
         specifier: catalog:default
         version: 5.8.2
-      undici:
-        specifier: catalog:default
-        version: 5.28.5
       vite:
         specifier: catalog:vite-plugin
         version: 6.1.0(@types/node@20.17.32)(jiti@2.4.2)(lightningcss@1.29.2)
@@ -8848,14 +8842,6 @@ packages:
       picomatch:
         optional: true
 
-  fdir@6.4.4:
-    resolution: {integrity: sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg==}
-    peerDependencies:
-      picomatch: ^3 || ^4
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
-
   fdir@6.4.5:
     resolution: {integrity: sha512-4BG7puHpVsIYxZUbiUE3RqGloLaSSwzYie5jvasC4LWuBWzZawynvYouhjbQKw2JuIGYdm0DzIxl8iVidKlUEw==}
     peerDependencies:
@@ -8900,9 +8886,6 @@ packages:
 
   fela@11.7.0:
     resolution: {integrity: sha512-hUn39q4lUa1KtN1S2baGKvJDWLLjKq7gDCUWJPXQQJa6STWeGwv20xldNLdx8iGx/t5DeHJ4gIBLuI5r++dBGg==}
-
-  fetch-to-node@2.1.0:
-    resolution: {integrity: sha512-Wq05j6LE1GrWpT2t1YbCkyFY6xKRJq3hx/oRJdWEJpZlik3g25MmdJS6RFm49iiMJw6zpZuBOrgihOgy2jGyAA==}
 
   fflate@0.8.2:
     resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
@@ -12056,10 +12039,6 @@ packages:
 
   tinyglobby@0.2.12:
     resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
-    engines: {node: '>=12.0.0'}
-
-  tinyglobby@0.2.13:
-    resolution: {integrity: sha512-mEwzpUgrLySlveBwEVDMKk5B57bhLPYovRfPAXD5gA/98Opn0rCDj3GtLwFvCvH5RK9uPCExUROW5NjDwvqkxw==}
     engines: {node: '>=12.0.0'}
 
   tinyglobby@0.2.14:
@@ -19150,10 +19129,6 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
-  fdir@6.4.4(picomatch@4.0.2):
-    optionalDependencies:
-      picomatch: 4.0.2
-
   fdir@6.4.5(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
@@ -19229,8 +19204,6 @@ snapshots:
       fast-loops: 1.1.4
       fela-utils: 11.7.0
       isobject: 3.0.1
-
-  fetch-to-node@2.1.0: {}
 
   fflate@0.8.2: {}
 
@@ -20543,7 +20516,7 @@ snapshots:
       postcss: 8.5.1
       postcss-nested: 7.0.2(postcss@8.5.1)
       semver: 7.7.1
-      tinyglobby: 0.2.13
+      tinyglobby: 0.2.14
     optionalDependencies:
       typescript: 5.8.2
       vue-tsc: 2.0.29(typescript@5.8.2)
@@ -22439,11 +22412,6 @@ snapshots:
   tinyglobby@0.2.12:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
-      picomatch: 4.0.2
-
-  tinyglobby@0.2.13:
-    dependencies:
-      fdir: 6.4.4(picomatch@4.0.2)
       picomatch: 4.0.2
 
   tinyglobby@0.2.14:
