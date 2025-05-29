@@ -163,8 +163,9 @@ describe("versions upload", () => {
 			"Total Upload: xx KiB / gzip: xx KiB
 			Worker Startup Time: 500 ms
 			Your Worker has access to the following bindings:
-			- Vars:
-			  - TEST: \\"test-string\\"
+			Binding                       Resource
+			env.TEST (\\"test-string\\")      Environment Variable
+
 			Uploaded test-name (TIMINGS)
 			Worker Version ID: 51e4886e-2db7-4900-8d38-fbfecfeab993
 			Version Preview URL: https://51e4886e-test-name.test-sub-domain.workers.dev

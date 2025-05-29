@@ -190,8 +190,10 @@ export const getCIOverrideName = getEnvironmentVariableFactory({
  * This is intended to be a way for users to set the version alias dynamically in CI environments.
  * The CLI arg should always take precedence over the envvar.
  */
-export const getCIOverridePreviewAlias = getEnvironmentVariableFactory({
-	variableName: "WRANGLER_CI_OVERRIDE_PREVIEW_ALIAS",
+export const getCIGeneratePreviewAlias = getEnvironmentVariableFactory({
+	variableName: "WRANGLER_CI_GENERATE_PREVIEW_ALIAS",
+	defaultValue: () => "false" as const,
+	choices: ["true", "false"] as const,
 });
 
 /**
