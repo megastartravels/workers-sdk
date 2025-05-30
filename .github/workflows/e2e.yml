@@ -6,13 +6,13 @@ on:
   repository_dispatch:
 
 jobs:
-  e2e-test:
+  e2e-tests:
+    name: "E2E Tests"
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.os }}-${{ matrix.node }}
       cancel-in-progress: true
     timeout-minutes: 60
     if: github.event_name == 'pull_request' && contains(github.event.*.labels.*.name, 'e2e') && github.event.pull_request.head.repo.owner.login == 'cloudflare'
-    name: "E2E Test"
     strategy:
       fail-fast: false
       matrix:
