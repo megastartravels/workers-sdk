@@ -1,0 +1,15 @@
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+    const url = new URL(request.url)
+
+    // Log visitor data (IP, User-Agent, Referrer)
+    console.log(`Visitor IP: ${request.headers.get('CF-Connecting-IP')}`)
+    console.log(`User-Agent: ${request.headers.get('User-Agent')}`)
+    console.log(`Referrer: ${request.headers.get('Referer')}`)
+
+    // Forward request to franchise site
+    return Response.redirect('https://mburley.dreamvacations.com' + url.pathname, 301)
+}
